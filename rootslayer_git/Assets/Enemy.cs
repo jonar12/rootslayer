@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     public float distancia;
     public float distanciaDeteccion;
     public float distanciaMin;    
-    public float daño = 10;
+    public float daño = 5;
+    public float vida = 10;
 
     void Start(){
         jugador = GameObject.FindGameObjectWithTag("Player");
@@ -24,6 +25,13 @@ public class Enemy : MonoBehaviour
         if(distancia < distanciaDeteccion) {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+        }
+    }
+
+    public void TomarDaño(float daño) {
+        vida -= daño;
+        if (vida <= 0) {
+            Destroy(gameObject);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3755773449854147330}
   - component: {fileID: 3755773449854147329}
   - component: {fileID: -8221501431654694809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   distanciaDeteccion: 10
   distanciaMin: 1
   "da\xF1o": 10
+  vida: 10
 --- !u!50 &3755773449854147334
 Rigidbody2D:
   serializedVersion: 4

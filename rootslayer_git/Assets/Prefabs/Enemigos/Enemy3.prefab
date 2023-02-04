@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 904290263505455435}
   - component: {fileID: -1160711257828986496}
   - component: {fileID: 54644458119268881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   distanciaDeteccion: 10
   distanciaMin: 1
   "da\xF1o": 10
+  vida: 100
 --- !u!50 &904290263505455432
 Rigidbody2D:
   serializedVersion: 4
@@ -205,4 +206,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combateJugador: {fileID: 0}
-  "da\xF1o": 70
+  "da\xF1o": 5
