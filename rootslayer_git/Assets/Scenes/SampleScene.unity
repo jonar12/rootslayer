@@ -7654,7 +7654,8 @@ MonoBehaviour:
   jugador: {fileID: 771482080}
   velocidad: 1
   distancia: 0
-  distanciaMin: 10
+  distanciaDeteccion: 10
+  distanciaMin: 1
 --- !u!212 &801772427
 SpriteRenderer:
   m_ObjectHideFlags: 0
