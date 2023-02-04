@@ -4,31 +4,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform jugador;
-    public float velocidadMov = 0.1f;
-    private Rigidbody2D rigidBody;
-    private Vector2 movimiento;
-    
+    public GameObject jugador;
+    public float velocidad;
+    public float distancia;
+    public float distanciaMin;    
 
     void Start(){
-        rigidBody = this.GetComponent<Rigidbody2D>();
+        
     }
 
     void Update() {
-        Vector3 direccion = jugador.position - transform.position;
-        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-        rigidBody.rotation = angulo;
+        distancia = Vector2.Distance(transform.position, jugador.transform.position);
+        Vector2 direccion = jugador.transform.position - transform.position;
         direccion.Normalize();
-        movimiento = direccion;
+        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
+        if(distancia < distanciaMin) {
+            transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+        }
     }
-    private void FixedUpdate() {
-        moveCharacter(movimiento);
-    }
-
-
-    void moveCharacter(Vector2 direccion) {
-        rigidBody.MovePosition((Vector2)transform.position + (direccion * velocidadMov * Time.deltaTime));
-    }
-
 }

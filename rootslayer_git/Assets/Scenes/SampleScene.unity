@@ -7651,8 +7651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9405a6a49bbcf4ca4b8707270243332c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 771482085}
-  velocidadMov: 5
+  jugador: {fileID: 771482080}
+  velocidad: 1
+  distancia: 0
+  distanciaMin: 10
 --- !u!212 &801772427
 SpriteRenderer:
   m_ObjectHideFlags: 0
