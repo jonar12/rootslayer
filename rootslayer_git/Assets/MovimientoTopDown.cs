@@ -19,5 +19,4 @@ public class MovimientoTopDown : MonoBehaviour
     private void FixedUpdate() {
         rigidBody.MovePosition(rigidBody.position + direccion * velocidad * Time.fixedDeltaTime);
     }
-
 }
