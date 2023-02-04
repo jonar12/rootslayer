@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float distancia;
     public float distanciaDeteccion;
     public float distanciaMin;    
+    public float daño = 10;
 
     void Start(){
         jugador = GameObject.FindGameObjectWithTag("Player");
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
         direccion.Normalize();
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-        if(distancia < distanciaDeteccion && distancia > distanciaMin) {
+        if(distancia < distanciaDeteccion) {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
         }
