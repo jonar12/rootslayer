@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject jugador;
+    [SerializeField] public GameObject jugador;
     public float velocidad;
     public float distancia;
     public float distanciaDeteccion;
     public float distanciaMin;    
 
     void Start(){
-        
+        jugador = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update() {
