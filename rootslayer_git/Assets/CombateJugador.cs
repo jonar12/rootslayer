@@ -14,6 +14,7 @@ public class CombateJugador : MonoBehaviour
     [SerializeField] public Transform attackPos;
     [SerializeField] public float attackRange;
     [SerializeField] public LayerMask queEsEnemigo;
+    [SerializeField] private AudioSource hitSound;
 
     // Start is called before the first frame update
     private void Start()
@@ -40,6 +41,7 @@ public class CombateJugador : MonoBehaviour
                 for (int i = 0; i < enemigosADañar.Length; i++) {
                     enemigosADañar[i].GetComponent<Enemy>().TomarDaño(daño);
                 }
+                hitSound.Play();
             }
 
             tiempoEntreAtaques = startTiempoEntreAtaques;
