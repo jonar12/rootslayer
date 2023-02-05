@@ -5,15 +5,15 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    public float TimeLeft;
+    [SerializeField] public float TimeLeft;
     public bool TimerOn = false;
     [SerializeField] private TextMeshProUGUI TimerText;
     [SerializeField] private ControladorEnemigos controladorEnemigos1;
+    // [SerializeField] private GameObject global;
     // Start is called before the first frame update
     void Start()
     {
         TimerOn = true;
-        TimeLeft = controladorEnemigos1.getTimeToOff(); 
     }
 
     // Update is called once per frame

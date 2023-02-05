@@ -14,8 +14,9 @@ public class ControladorEnemigos : MonoBehaviour
     [SerializeField] private int numEnemigos;
     [SerializeField] private int minNumEnemigos;
     [SerializeField] private int maxNumEnemigos;
-    private float timeToOff = 10f;
+    public float timeToOff = 10f;
     private float tiempoSiguienteEnemigo;
+    [SerializeField] public GameObject timer;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,12 @@ public class ControladorEnemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeToOff > 0) {
-            timeToOff -= Time.deltaTime;
-        }
+        // if (timeToOff > 0) {
+        //     timeToOff -= Time.deltaTime;
+        // }
         tiempoSiguienteEnemigo += Time.deltaTime;
 
-        if(tiempoSiguienteEnemigo >= tiempoEnemigos && timeToOff > 0) {
+        if(tiempoSiguienteEnemigo >= tiempoEnemigos &&timer.GetComponent<TimerScript>().TimeLeft > 0) {
             tiempoSiguienteEnemigo = 0;
             tiempoEnemigos = getTiempoEnemigosRandom(tiempoMinEnemigos, tiempoMaxEnemigos);
             // Crear enemigo
@@ -62,4 +63,5 @@ public class ControladorEnemigos : MonoBehaviour
     public float getTimeToOff() {
         return timeToOff;
     }
+
 }
