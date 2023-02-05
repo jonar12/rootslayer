@@ -5,11 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public GameObject jugador;
-    [SerializeField] public float velocidad;
+    [SerializeField] public float velocidadMov;
     [SerializeField] private float daño;
     [SerializeField] public float distanciaDeteccion;
     [SerializeField] public float vida;
     private float distancia;
+    private Rigidbody2D rigidBody;
+    private Vector2 movimiento;
+
     // private float distanciaMin;    
     private CombateJugador combateJugador;
 
@@ -19,6 +22,7 @@ public class Enemy : MonoBehaviour
         if (jugador != null) {
             combateJugador = jugador.GetComponent<CombateJugador>();   
         }
+        rigidBody = this.GetComponent<Rigidbody2D>();
     }
 
     void Update() {
@@ -27,14 +31,16 @@ public class Enemy : MonoBehaviour
             return;
         }
         distancia = Vector2.Distance(transform.position, jugador.transform.position);
-        Vector2 direccion = jugador.transform.position - transform.position;
-        direccion.Normalize();
+        Vector3 direccion = jugador.transform.position - transform.position;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+        rigidBody.rotation = angulo;
+        direccion.Normalize();
+        movimiento = direccion;
 
-        if(distancia < distanciaDeteccion) {
-            transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
-        }
+        // if(distancia < distanciaDeteccion) {
+        //     transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
+        //     transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+        // }
     }
 
     public void TomarDaño(float daño) {
@@ -55,5 +61,12 @@ public class Enemy : MonoBehaviour
         if(colision.gameObject.tag == "Player" && jugador != null) {
             combateJugador.TomarDaño(daño);
     }
+    }
+
+    private void moveCharacter(Vector2 direccion) {
+        rigidBody.MovePosition((Vector2)transform.position + (direccion * velocidadMov * Time.deltaTime));
+    }
+    private void FixedUpdate() {
+        moveCharacter(movimiento);
     }
 }
