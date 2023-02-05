@@ -6,6 +6,7 @@ public class CambiarRotacion : MonoBehaviour
 {
 	[SerializeField] private Camera camera2;
 	[Header("MovimientoCamara")]
+	public float delay = 0.3f;
 	[SerializeField] private Vector3 objetivo;
 	
 	private void Update()
