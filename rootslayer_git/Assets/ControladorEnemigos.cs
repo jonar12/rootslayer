@@ -9,6 +9,11 @@ public class ControladorEnemigos : MonoBehaviour
     [SerializeField] private Transform[] puntos;
     [SerializeField] private GameObject[] enemigos;
     [SerializeField] private float tiempoEnemigos;
+    [SerializeField] private float tiempoMinEnemigos;
+    [SerializeField] private float tiempoMaxEnemigos;
+    [SerializeField] private int numEnemigos;
+    [SerializeField] private int minNumEnemigos;
+    [SerializeField] private int maxNumEnemigos;
 
     private float tiempoSiguienteEnemigo;
 
@@ -19,6 +24,8 @@ public class ControladorEnemigos : MonoBehaviour
         minX = puntos.Min(punto => punto.position.x);
         minY = puntos.Min(punto => punto.position.y);
         maxY = puntos.Max(punto => punto.position.y);
+        tiempoEnemigos = 0.5f;
+        numEnemigos = Random.Range(minNumEnemigos, maxNumEnemigos);
     }
 
     // Update is called once per frame
@@ -28,8 +35,12 @@ public class ControladorEnemigos : MonoBehaviour
 
         if(tiempoSiguienteEnemigo >= tiempoEnemigos) {
             tiempoSiguienteEnemigo = 0;
+            tiempoEnemigos = getTiempoEnemigosRandom(tiempoMinEnemigos, tiempoMaxEnemigos);
             // Crear enemigo
-            CrearEnemigo();
+            for (int i = 0; i < numEnemigos; i++) {
+                CrearEnemigo();
+            }
+            numEnemigos = Random.Range(minNumEnemigos, maxNumEnemigos);
         }
     }
 
@@ -39,5 +50,9 @@ public class ControladorEnemigos : MonoBehaviour
 
         Instantiate(enemigos[numeroEnemigo], posicionRandom, Quaternion.identity);
 
+    }
+
+    private float getTiempoEnemigosRandom(float min, float max) {
+        return Random.Range(min,max);
     }
 }
