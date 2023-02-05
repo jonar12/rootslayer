@@ -10,6 +10,8 @@ TagManager:
   - VirtualCamera
   - HitSound
   - HurtSound
+  - Global
+  - CanvasGameOver
   layers:
   - Default
   - TransparentFX

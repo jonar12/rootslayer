@@ -18,12 +18,15 @@ public class Global : MonoBehaviour
     [SerializeField] private float timeBetweenRoundsMax;
     [SerializeField] private float timeBetweenRounds;
     [SerializeField] private GameObject timer;
+    public bool isGameOver;
+    [SerializeField] private GameObject gameOverCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         startGame();
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        gameOverCanvas = GameObject.FindGameObjectWithTag("CanvasGameOver");
         initializeRound();
     }
 
@@ -36,7 +39,10 @@ public class Global : MonoBehaviour
         } else {
             initializeRound();
         }
-        
+        if(jugador == null) {
+            isGameOver = true;
+            gameOverCanvas.GetComponent<GameOverMenu>().Over = true;
+        }
     }
 
     public int getRondaActual() {
@@ -69,6 +75,7 @@ public class Global : MonoBehaviour
         rondaActual = 1;
         timeBetweenRounds = 0;
         initializeRound();
+        isGameOver = false;
     }
 
     private void setFollowTarget() {

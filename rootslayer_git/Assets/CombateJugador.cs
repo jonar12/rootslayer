@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CombateJugador : MonoBehaviour
 {
-    [SerializeField] private float vida;
+    [SerializeField] public float vida;
     [SerializeField] private float maximoVida;
     private BarraDeVida barraDeVida;
     private AudioSource hurtSound;
@@ -23,7 +23,7 @@ public class CombateJugador : MonoBehaviour
         hurtSound.Play();
         barraDeVida.CambiarVidaActual(vida);
         if(vida <= 0) {
-            Destroy(gameObject);    
+            Destroy(gameObject);
         }
     }
 

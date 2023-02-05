@@ -5,17 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    public static bool Over=false;
+    public bool Over = false;
     public GameObject gameOverUi;
+    public GameObject globalJuego;
+    private Scene currentScene;
+    private string SceneName;
+
+    private void Start() {
+        currentScene = SceneManager.GetActiveScene();
+        SceneName = currentScene.name;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)){
-            if (Over){
-                Restart();
-            }else{
-                GameOver();
-            }
+        if (Over) {
+            GameOver();
         }
     }
     public void Restart(){
