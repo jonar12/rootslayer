@@ -12,12 +12,6 @@ public class Weapon : MonoBehaviour
         dano = 20;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Enemigo enemigo = collider.gameObject.GetComponent<Enemigo>();

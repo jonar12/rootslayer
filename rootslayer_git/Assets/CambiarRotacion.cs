@@ -6,12 +6,7 @@ public class CambiarRotacion : MonoBehaviour
 {
 	[SerializeField] private Camera camera2;
 	[Header("MovimientoCamara")]
-		[SerializeField] private Vector3 objetivo;
-	
-	public Animator animator;
-	public float delay = 0.3f;
-	private bool attackBlocked;
-	
+	[SerializeField] private Vector3 objetivo;
 	
 	private void Update()
 	{
@@ -22,18 +17,4 @@ public class CambiarRotacion : MonoBehaviour
 		transform.rotation = Quaternion.Euler(0, 0, anguloGrados);
 	}
 	
-	public void Attack()
-	{
-		if (attackBlocked)
-			return;
-		animator.SetTrigger("Attack");
-		attackBlocked = true;
-		StartCoroutine(DelayAttack());
-	}
-	
-	private IEnumerator DelayAttack()
-	{
-		yield return new WaitForSeconds(delay);
-		attackBlocked = false;
-	}
 }
