@@ -6,7 +6,7 @@ public class MovimientoTopDown : MonoBehaviour
 {
     [SerializeField] private float velocidad;
     [SerializeField] private Vector2 direccion;
-    [SerializeField] private float velocidadRotacion;
+    // [SerializeField] private float velocidadRotacion;
 
     private Rigidbody2D rigidBody;
 

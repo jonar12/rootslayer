@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Global : MonoBehaviour
 {
     [SerializeField] private int rondasMax;
     private int rondaActual;
     GameObject[] allEnemies;
-    public GameObject jugador;
+
+    // prefab
+    [SerializeField] public GameObject jugador;
     [SerializeField] private ControladorEnemigos controladorEnemigos1;
     private GameObject[] spawners;
     private bool roundHasChanged;
+    [SerializeField] private Transform playerSpawn;
     [SerializeField] private float timeBetweenRoundsMax;
     [SerializeField] private float timeBetweenRounds;
     [SerializeField] private GameObject timer;
@@ -18,9 +22,7 @@ public class Global : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeBetweenRounds = 0;
-        rondaActual = 1;
-        jugador = GameObject.FindGameObjectWithTag("Player");
+        startGame();
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         initializeRound();
     }
@@ -57,5 +59,25 @@ public class Global : MonoBehaviour
         // Resetear el tiempo
         timer.GetComponent<TimerScript>().TimeLeft = rondaActual * 15;
         timer.GetComponent<TimerScript>().TimerOn = true;
+    }
+
+    private void startGame() {
+        // spawnear al jugador con vida reseteada
+        Vector2 posicionSpawnJugador = new Vector2(playerSpawn.position.x, playerSpawn.position.y);
+        jugador = Instantiate(jugador, posicionSpawnJugador, Quaternion.identity);
+        setFollowTarget();
+        rondaActual = 1;
+        timeBetweenRounds = 0;
+        initializeRound();
+    }
+
+    private void setFollowTarget() {
+        CinemachineVirtualCamera virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        if(jugador == null) {
+            jugador = GameObject.FindGameObjectWithTag("Player");
+        }
+        Transform tFollowTarget = jugador.transform;
+        virtualCamera.LookAt = tFollowTarget;
+        virtualCamera.Follow = tFollowTarget;
     }
 }

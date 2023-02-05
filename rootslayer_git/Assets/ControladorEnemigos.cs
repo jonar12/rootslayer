@@ -37,7 +37,7 @@ public class ControladorEnemigos : MonoBehaviour
         // }
         tiempoSiguienteEnemigo += Time.deltaTime;
 
-        if(tiempoSiguienteEnemigo >= tiempoEnemigos &&timer.GetComponent<TimerScript>().TimeLeft > 0) {
+        if(tiempoSiguienteEnemigo >= tiempoEnemigos && timer.GetComponent<TimerScript>().TimeLeft > 0) {
             tiempoSiguienteEnemigo = 0;
             tiempoEnemigos = getTiempoEnemigosRandom(tiempoMinEnemigos, tiempoMaxEnemigos);
             // Crear enemigo

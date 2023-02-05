@@ -7,6 +7,10 @@ public class CambiarRotacion : MonoBehaviour
 	[SerializeField] private Camera camera2;
 	[Header("MovimientoCamara")]
 	[SerializeField] private Vector3 objetivo;
+
+	private void Start() {
+		camera2 = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+	}
 	
 	private void Update()
 	{
