@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class enemyDamage : MonoBehaviour
 {
-
+    public GameObject jugador;
     public CombateJugador combateJugador;
     public int daño = 30;
     // Start is called before the first frame update
     void Start()
     {
-        combateJugador = GameObject.FindGameObjectWithTag("Player").GetComponent<CombateJugador>();   
+        jugador = GameObject.FindGameObjectWithTag("Player");
+        combateJugador = jugador.GetComponent<CombateJugador>();   
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class enemyDamage : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D colision) {
-        if(colision.gameObject.tag == "Player") {
+        if(colision.gameObject.tag == "Player" && jugador != null) {
             combateJugador.TomarDaño(daño);
         }
     }

@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     }
 
     void Update() {
+        if(jugador == null) {
+            DestroyAllEnemies();
+            return;
+        }
         distancia = Vector2.Distance(transform.position, jugador.transform.position);
         Vector2 direccion = jugador.transform.position - transform.position;
         direccion.Normalize();
@@ -32,6 +36,13 @@ public class Enemy : MonoBehaviour
         vida -= daño;
         if (vida <= 0) {
             Destroy(gameObject);
+        }
+    }
+
+    public void DestroyAllEnemies() {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in allEnemies) {
+            Destroy(enemy);
         }
     }
 }

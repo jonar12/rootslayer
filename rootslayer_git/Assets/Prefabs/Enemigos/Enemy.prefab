@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -8221501431654694809}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,8 +108,6 @@ MonoBehaviour:
   distanciaMin: 1
   "da\xF1o": 10
   vida: 10
-  deadSound: {fileID: 0}
-  damageSound: {fileID: 0}
 --- !u!50 &3755773449854147334
 Rigidbody2D:
   serializedVersion: 4
@@ -207,5 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee16b8cd897449e6ae45046cda6f533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jugador: {fileID: 0}
   combateJugador: {fileID: 0}
   "da\xF1o": 1
