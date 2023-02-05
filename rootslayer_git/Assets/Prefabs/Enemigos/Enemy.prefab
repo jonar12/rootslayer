@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3755773449854147334}
   - component: {fileID: 3755773449854147330}
   - component: {fileID: 3755773449854147329}
-  - component: {fileID: -8221501431654694809}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -102,12 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 0}
-  velocidad: 2
-  distancia: 0
-  distanciaDeteccion: 10
-  distanciaMin: 1
+  velocidad: 5
   "da\xF1o": 10
-  vida: 10
+  distanciaDeteccion: 25
+  vida: 50
 --- !u!50 &3755773449854147334
 Rigidbody2D:
   serializedVersion: 4
@@ -193,18 +190,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9128637}
   m_EdgeRadius: 0
---- !u!114 &-8221501431654694809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3755773449854147335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee16b8cd897449e6ae45046cda6f533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
-  combateJugador: {fileID: 0}
-  "da\xF1o": 1

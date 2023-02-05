@@ -5,15 +5,20 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public GameObject jugador;
-    public float velocidad;
-    public float distancia;
-    public float distanciaDeteccion;
-    public float distanciaMin;    
-    public float daño = 5;
-    public float vida = 10;
+    [SerializeField] public float velocidad;
+    [SerializeField] private float daño;
+    [SerializeField] public float distanciaDeteccion;
+    [SerializeField] public float vida;
+    private float distancia;
+    private float distanciaMin;    
+    private CombateJugador combateJugador;
 
     void Start(){
+        distanciaMin = 0.5f;
         jugador = GameObject.FindGameObjectWithTag("Player");
+        if (jugador != null) {
+            combateJugador = jugador.GetComponent<CombateJugador>();   
+        }
     }
 
     void Update() {
@@ -26,7 +31,7 @@ public class Enemy : MonoBehaviour
         direccion.Normalize();
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-        if(distancia < distanciaDeteccion) {
+        if(distancia < distanciaDeteccion && distancia > distanciaMin) {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
             // transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
         }
@@ -44,5 +49,11 @@ public class Enemy : MonoBehaviour
         foreach (GameObject enemy in allEnemies) {
             Destroy(enemy);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D colision) {
+        if(colision.gameObject.tag == "Player" && jugador != null) {
+            combateJugador.TomarDaño(daño);
+    }
     }
 }
