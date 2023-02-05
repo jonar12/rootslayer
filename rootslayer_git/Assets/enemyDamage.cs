@@ -11,7 +11,9 @@ public class enemyDamage : MonoBehaviour
     void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
-        combateJugador = jugador.GetComponent<CombateJugador>();   
+        if(jugador != null) {
+            combateJugador = jugador.GetComponent<CombateJugador>();   
+        }
     }
 
     // Update is called once per frame
