@@ -8,6 +8,7 @@ public class GameOverMenu : MonoBehaviour
     public bool Over = false;
     public GameObject gameOverUi;
     public GameObject globalJuego;
+    public AudioSource audio;
     private Scene currentScene;
     private string SceneName;
 
@@ -26,6 +27,7 @@ public class GameOverMenu : MonoBehaviour
     public void Restart(){
         Time.timeScale=1f;
         Over=false;
+        audio.mute=false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void LoadMainMenu(){
@@ -39,6 +41,7 @@ public class GameOverMenu : MonoBehaviour
     void GameOver(){
         gameOverUi.SetActive(true);
         Time.timeScale=0f;
+        audio.mute=true;
         Over=true;
     }
 }

@@ -814,6 +814,7 @@ GameObject:
   - component: {fileID: 240196672}
   - component: {fileID: 240196671}
   - component: {fileID: 240196675}
+  - component: {fileID: 240196676}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -922,6 +923,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 8c8c7adbb1209cf408065fba1d23cfdf, type: 2}
   resolutionDropdown: {fileID: 1227252958}
+--- !u!82 &240196676
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240196670}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8c8c7adbb1209cf408065fba1d23cfdf, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6eed42a5a6d60466b94e4abb05993638, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &319091621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUi: {fileID: 1724926061}
+  audio: {fileID: 0}
 --- !u!114 &1373041691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,6 +5217,7 @@ MonoBehaviour:
   Over: 0
   gameOverUi: {fileID: 1286741992}
   globalJuego: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!1 &1390672861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6491,8 +6590,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Authors:\n-Fernando Maggi\n-Jonathan Arredondo\n-Kevin Nu\xF1ez\n-Antonieta
-    RD\n\nAssets:\n-Menu image from Hotpot.ai\n-Free Unity Store Assets"
+  m_text: "Authors:\n-FML\n-Jonathan Arredondo\n-Kevin Nu\xF1ez\n-Antonieta Rodriguez\n\nAssets:\n-Menu
+    image from Hotpot.ai\n-Free Unity Store Assets\n-Main Menu Music from \n-Gameplay
+    Music from Bensound\n-Pause and Game Over Music from ZapSplat"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

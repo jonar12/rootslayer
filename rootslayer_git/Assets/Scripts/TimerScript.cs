@@ -37,6 +37,6 @@ public class TimerScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
-        TimerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        TimerText.text = string.Format("Time to spawners off\n{0:00} : {1:00}", minutes, seconds);
     }
 }

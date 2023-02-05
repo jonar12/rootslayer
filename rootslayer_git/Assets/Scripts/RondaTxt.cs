@@ -20,6 +20,6 @@ public class RondaTxt : MonoBehaviour
     }
     
     public void updateRound(int rondaActual) {
-        RondaText.text = string.Format("Ronda {0}", rondaActual);
+        RondaText.text = string.Format("Round {0}", rondaActual);
     }
 }

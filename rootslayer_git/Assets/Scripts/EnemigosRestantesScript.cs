@@ -21,6 +21,6 @@ public class EnemigosRestantesScript : MonoBehaviour
     {
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemiesRemaining = allEnemies.Length;
-        EnemigosRestantesTxt.text = string.Format("Enemigos restantes: {0}", numEnemiesRemaining);
+        EnemigosRestantesTxt.text = string.Format("Remaining Enemies\n{0}", numEnemiesRemaining);
     }
 }
