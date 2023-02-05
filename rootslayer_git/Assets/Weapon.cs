@@ -14,13 +14,13 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Enemigo enemigo = collider.gameObject.GetComponent<Enemigo>();
+        Enemy enemigo = collider.gameObject.GetComponent<Enemy>();
 
         Debug.Log("Le pegamos al enemigo");
 
         if(enemigo != null)
         {
-            enemigo.ApplyDamage(dano);
+            enemigo.TomarDaño(dano);
         }   
     }
 }
