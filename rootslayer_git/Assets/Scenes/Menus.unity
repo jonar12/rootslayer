@@ -6591,7 +6591,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Authors:\n-FML\n-Jonathan Arredondo\n-Kevin Nu\xF1ez\n-Antonieta Rodriguez\n\nAssets:\n-Menu
-    image from Hotpot.ai\n-Free Unity Store Assets\n-Main Menu Music from \n-Gameplay
+    image from Hotpot.ai\n-Free Unity Store Assets\n-Main Menu Music from ZapSplat\n-Gameplay
     Music from Bensound\n-Pause and Game Over Music from ZapSplat"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
