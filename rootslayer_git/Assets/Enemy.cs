@@ -10,11 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float distanciaDeteccion;
     [SerializeField] public float vida;
     private float distancia;
-    private float distanciaMin;    
+    // private float distanciaMin;    
     private CombateJugador combateJugador;
 
     void Start(){
-        distanciaMin = 0.5f;
+        // distanciaMin = 0.5f;
         jugador = GameObject.FindGameObjectWithTag("Player");
         if (jugador != null) {
             combateJugador = jugador.GetComponent<CombateJugador>();   
@@ -31,9 +31,9 @@ public class Enemy : MonoBehaviour
         direccion.Normalize();
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-        if(distancia < distanciaDeteccion && distancia > distanciaMin) {
+        if(distancia < distanciaDeteccion) {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
-            // transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+            transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
         }
     }
 

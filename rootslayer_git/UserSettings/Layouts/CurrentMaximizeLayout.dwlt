@@ -224,8 +224,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: eefefeff
-      m_LastClickedID: -65810
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: 10e2ffff94e2ffffd4e3ffff4ce4ffffe0e8ffff0cfbffff3862000092850000d087000086890000a0890000fe890000448a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -705,22 +705,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/jonar12/Developer/GitHub/rootslayer/rootslayer_git
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae630000
-    m_LastClickedID: 25518
-    m_ExpandedIDs: 00000000aa630000ac630000ae63000000ca9a3bffffff7f
+    m_SelectedIDs: c8630000
+    m_LastClickedID: 25544
+    m_ExpandedIDs: 00000000aa630000ac630000ae630000c863000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -773,9 +773,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: eefefeff
-    m_LastClickedInstanceID: -65810
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000506300002a6a0000b0700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -851,8 +851,8 @@ MonoBehaviour:
     y: 0
     width: 505.5
     height: 866
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}

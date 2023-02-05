@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 122279596}
   - component: {fileID: 122279595}
   - component: {fileID: 122279594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3050,7 +3050,7 @@ GameObject:
   - component: {fileID: 960271573}
   - component: {fileID: 960271572}
   - component: {fileID: 960271574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3380,7 +3380,7 @@ GameObject:
   - component: {fileID: 1184026029}
   - component: {fileID: 1184026028}
   - component: {fileID: 1184026030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3648,7 +3648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273476099}
   - component: {fileID: 1273476098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: imgFondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4571,7 +4571,7 @@ GameObject:
   - component: {fileID: 2082068562}
   - component: {fileID: 2082068561}
   - component: {fileID: 2082068563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
