@@ -8,7 +8,6 @@ public class CombateJugador : MonoBehaviour
     [SerializeField] private float maximoVida;
     [SerializeField] private BarraDeVida barraDeVida;
     [SerializeField] private float daño = 2;
-    private float exp = 0;
 
     private float tiempoEntreAtaques;
     [SerializeField] private float startTiempoEntreAtaques;
